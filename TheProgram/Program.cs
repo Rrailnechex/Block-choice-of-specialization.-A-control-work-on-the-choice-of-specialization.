@@ -30,7 +30,7 @@ string[] newAr = new string[firstAr.GetLength(0)];
 int maxL = 3;
 
 
-//узнаём длинну нового массива и выбираем элементы
+//выбираем элементы
 for (int i = 0; i < firstAr.GetLength(0); i++)
 {
     if (firstAr[i].Length <= maxL)
