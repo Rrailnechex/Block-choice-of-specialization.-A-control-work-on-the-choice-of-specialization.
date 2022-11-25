@@ -12,6 +12,19 @@
 использовать массивы
  */
 
+void Print1DArray(string[] inputArray)
+{
+    Console.Write("[");
+    for (int rows = 0; rows < inputArray.GetLength(0); rows++)
+    {
+        Console.Write($"{inputArray[rows]}, ");
+    }
+    Console.Write("]");
+}
+
+
+
+
 
 
 string[] firstAr = { "1234", "1567", "computer science", "-2", "e" };
@@ -29,4 +42,26 @@ for (int i = 0; i < firstAr.GetLength(0); i++)
     }
 }
 
-int[] newAr = new int[firstAr.GetLength(0)];
+Console.WriteLine($"{newL} -> ------------------- дальше");
+
+string[] newAr = new string[newL];
+
+for (int i = 0; i < newAr.GetLength(0); i++)
+{
+    if (firstAr[i].Length <= maxL)
+    {
+        newL++;
+        Console.WriteLine($"{newL} -> newL newL newL newL");
+        Console.WriteLine($"{firstAr[i].Length} -> firstAr[i].Length");
+        newAr[i] = firstAr[i];
+
+    }
+}
+
+Console.WriteLine($" -> ------------------- конец");
+
+Console.Write($"Изначальный массив = ");
+Print1DArray(firstAr);
+Console.WriteLine();
+Console.Write($"Финальный массив = ");
+Print1DArray(newAr);
