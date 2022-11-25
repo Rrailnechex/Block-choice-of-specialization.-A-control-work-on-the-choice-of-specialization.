@@ -23,50 +23,28 @@ void Print1DArray(string[] inputArray)
     Console.Write("]"); Console.WriteLine();
 }
 
-
-string[] firstAr = { "1234", "1567", "computer science", "-2y", "eьжлропав", "0", "][" };
-string[] midAr = new string[firstAr.GetLength(0)];
-int newL = 0;
+//string[] firstAr = { "hoTo-GVaisai", "t", "time is", "-rt", "walsho`a ri", "h562", "true", "rrava" };
+//string[] firstAr = { "Guliuhwa", "hu LL45", "computer science", "-2y", "dz", "0tt", "watti", "r" };
+string[] firstAr = { "1234", "1..", "computer science", "-2y", "eьжлропав", "0", "][", "rty" };
+string[] newAr = new string[firstAr.GetLength(0)];
 int maxL = 3;
 
 
 //узнаём длинну нового массива и выбираем элементы
 for (int i = 0; i < firstAr.GetLength(0); i++)
 {
-    Console.WriteLine($"//for1 = {i}");
     if (firstAr[i].Length <= maxL)
     {
-        newL++;
-        midAr[i] = firstAr[i];
-        Console.WriteLine($"//midAr[i] = {midAr[i]}; i = {i}");
+        newAr[i] = firstAr[i];
     }
 }
-Console.WriteLine($"//длинна узнана = {newL}");
-Console.Write($"//Print1DArray midAr = ");
-Print1DArray(midAr);
 
 
-string[] newAr = new string[newL];
-int iofNewAr = 0;
-
-//добавляем в новый массив строки
-for (int i = 0; i < newL; i++)
-{
-    Console.WriteLine($"//for2 = {i}");
-    if (firstAr[i].Length <= maxL)
-    {
-        newAr[iofNewAr] = firstAr[i];
-        Console.WriteLine($"//цикл добавления = {i}; newAr[iofNewAr] = {newAr[iofNewAr]}; firstAr[i] = {firstAr[i]}");
-        iofNewAr++;
-    }
-}
+//убираем из массива пустые элементы с помощю Linq 
+newAr = newAr.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 
 
 Console.Write($"Изначальный массив = ");
 Print1DArray(firstAr);
 Console.Write($"Финальный массив = ");
 Print1DArray(newAr);
-
-midAr = midAr.Where(x => !string.IsNullOrEmpty(x)).ToArray();
-Console.Write($"midAr массив = ");
-Print1DArray(midAr);
